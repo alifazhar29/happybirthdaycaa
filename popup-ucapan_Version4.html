@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Ucapan Ulang Tahun Risa</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #ffb2d0 0%, #f9c6ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 182, 193, 0.88);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.7s;
+    }
+    .popup-card {
+      background: linear-gradient(120deg, #ffe4e1 0%, #f9c6ff 100%);
+      border-radius: 25px;
+      box-shadow: 0 8px 32px rgba(255, 0, 117, 0.15);
+      padding: 36px 28px 24px 28px;
+      max-width: 370px;
+      text-align: center;
+      position: relative;
+      border: 2px solid #ffb2d0;
+      animation: popUp 0.8s cubic-bezier(.32,1.56,.73,.98);
+    }
+    .popup-card h2 {
+      color: #ff69b4;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      font-family: 'Pacifico', cursive, sans-serif;
+      letter-spacing: 1px;
+    }
+    .popup-card p {
+      color: #6a3a5e;
+      font-size: 1.08rem;
+      margin-bottom: 22px;
+      line-height: 1.6;
+      font-family: 'Segoe UI', cursive, sans-serif;
+    }
+    .popup-imgs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .popup-imgs img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid #ffaec9;
+      box-shadow: 0 2px 8px #ffd6e0;
+      transition: transform 0.2s;
+      background: #fff;
+    }
+    .popup-imgs img:hover {
+      transform: scale(1.11) rotate(-3deg);
+    }
+    .popup-close-btn {
+      font-size: 1.07rem;
+      background: linear-gradient(90deg, #ffb2d0 0%, #ffd6e0 100%);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 34px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #ffaec9;
+      transition: background 0.2s, transform 0.16s;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    .popup-close-btn:hover {
+      background: linear-gradient(90deg, #ffaec9 0%, #f9c6ff 100%);
+      transform: scale(1.06);
+    }
+    @keyframes fadeIn { from { opacity: 0;} to {opacity: 1;} }
+    @keyframes popUp {
+      0% { transform: scale(0.4) rotate(-8deg);}
+      70% { transform: scale(1.1) rotate(2deg);}
+      100% {transform: scale(1) rotate(0);}
+    }
+    @media (max-width: 600px) {
+      .popup-card { max-width: 95vw; padding: 24px 8vw; }
+      .popup-imgs img { width: 65px; height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="popupUcapan" class="popup-bg">
+    <div class="popup-card">
+      <h2>🎉 Selamat Ulang Tahun Risa! 🎂</h2>
+      <div class="popup-imgs">
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+      </div>
+      <button class="popup-close-btn" onclick="document.getElementById('popupUcapan').style.display='none'">Tutup Ucapan</button>
+    </div>
+  </div>
+</body>
+</html>
